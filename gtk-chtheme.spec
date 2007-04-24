@@ -1,7 +1,7 @@
 Summary: Utility to preview and change GTK 2 themes
 Name:    gtk-chtheme
-Version: 0.2
-Release: 2mdk
+Version: 0.3.1
+Release: %mkrel 1
 Source:  %name-%version.tar.bz2
 URL:     http://plasmasturm.org/programs/gtk-chtheme/
 Group:   Graphical desktop/GNOME
