@@ -31,7 +31,6 @@ install -s -m 755 gtk-chtheme $RPM_BUILD_ROOT%_bindir
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=%{name}
 Comment=Change GTK-2.0 theme
 Exec=%{_bindir}/%{name} 
