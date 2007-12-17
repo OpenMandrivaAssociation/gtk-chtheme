@@ -8,7 +8,6 @@ Source1: gtk.png
 URL:     http://plasmasturm.org/programs/gtk-chtheme/
 Group:   Graphical desktop/GNOME
 License: GPL
-BuildRoot: %_tmppath/%name-%version-build
 BuildRequires: libgtk+2-devel
 BuildRequires: ImageMagick
 
