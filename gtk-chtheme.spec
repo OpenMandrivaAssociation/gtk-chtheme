@@ -10,7 +10,7 @@ Group:   Graphical desktop/GNOME
 License: GPL
 BuildRoot: %_tmppath/%name-%version-build
 BuildRequires: libgtk+2-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 
 %description
 Gtk-chtheme allows you to change the Gtk+ 2.0 theme when not using GNOME.
