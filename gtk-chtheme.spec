@@ -1,15 +1,16 @@
 Name:		gtk-chtheme
 Version:	0.3.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 Summary:	Utility to preview and change GTK 2 themes
 Source:		%{name}-%{version}.tar.bz2
 Source1:	gtk.png
 Patch1:		gtk-chtheme-0.3.1-fix-build-with-gtk.patch
 Patch2:		gtk-chtheme-0.3.1-dont-strip-binary-too-early.patch
+Patch3:		gtk-chtheme-0.3.1-replace_deprecated_GtkFunction.patch
+Patch4:		gtk-chtheme-0.3.1-fix_linking.patch
 URL:		http://plasmasturm.org/programs/gtk-chtheme/
 Group:		Graphical desktop/GNOME
 License:	GPLv2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgtk+2-devel
 BuildRequires:	imagemagick
 
@@ -20,10 +21,12 @@ Gtk-chtheme allows you to change the Gtk+ 2.0 theme when not using GNOME.
 %setup -q
 %patch1 -p1 -b .gtk
 %patch2 -p1 -b .strip
+%patch3 -p0 -b .GtkFunction
+%patch4 -p0 -b .linking
 
 %build
 %setup_compile_flags
-%make PREFIX=%{_prefix}
+%make PREFIX=%{_prefix} LDFLAGS="%{ldflags}"
 
 %install
 rm -rf %{buildroot}
@@ -31,7 +34,7 @@ rm -rf %{buildroot}
 
 # menu
 mkdir -p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/%{_real_vendor}-%{name}.desktop << EOF
 [Desktop Entry]
 Name=%{name}
 Comment=Change GTK-2.0 theme
