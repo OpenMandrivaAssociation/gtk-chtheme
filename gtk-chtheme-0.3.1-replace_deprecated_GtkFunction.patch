@@ -1,0 +1,11 @@
+--- ./theme_sel.c.orig	2011-04-27 17:15:54.000000000 +0200
++++ ./theme_sel.c	2011-04-27 17:16:18.000000000 +0200
+@@ -110,7 +110,7 @@ GtkWidget *create_theme_sel(void)
+ 		GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+ 	gtk_container_add(GTK_CONTAINER(sw), theme_list);
+ 
+-	gtk_timeout_add(0, (GtkFunction)theme_list_focus, theme_list);
++	gtk_timeout_add(0, (GSourceFunc)theme_list_focus, theme_list);
+ 
+ 	return sw;
+ }

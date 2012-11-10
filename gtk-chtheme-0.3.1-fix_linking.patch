@@ -1,0 +1,21 @@
+--- ./Makefile.orig	2011-04-27 17:18:51.000000000 +0200
++++ ./Makefile	2011-04-27 17:19:27.000000000 +0200
+@@ -2,7 +2,8 @@ include Metadata
+ 
+ CFLAGS := $(if $(RPM_OPT_FLAGS), $(RPM_OPT_FLAGS), $(CFLAGS))
+ 
+-LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
++LDFLAGS = 
++LIBS = $(shell pkg-config --libs gtk+-2.0)
+ CFLAGS += -Wall
+ CFLAGS += $(shell pkg-config --cflags gtk+-2.0) -DGTK_DISABLE_BROKEN -DGTK_DISABLE_DEPRECATED
+ CFLAGS += -DPROJNAME='"$(PROJNAME)"' -DVERSION='"$(VERSION)"'
+@@ -17,7 +18,7 @@ EXTRAS = $(addprefix $(EXENAME), .spec .
+ all: $(EXENAME) $(EXENAME).1
+ 
+ $(EXENAME): $(addsuffix .o, $(SRC))
+-	$(CC) $(LDFLAGS) $^ -o $@
++	$(CC) $(LDFLAGS) $^ $(LIBS) -o $@
+ 
+ $(EXENAME).1: $(EXENAME).pod
+ 	pod2man $< | sed 's/^\.TH .*/.TH $(EXENAME) 1/' > $@
