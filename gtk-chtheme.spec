@@ -1,6 +1,6 @@
 Name:		gtk-chtheme
 Version:	0.3.1
-Release:	8
+Release:	9
 Summary:	Utility to preview and change GTK 2 themes
 Source0:		%{name}-%{version}.tar.bz2
 Source1:	gtk.png
