@@ -8,7 +8,7 @@ Patch1:		gtk-chtheme-0.3.1-fix-build-with-gtk.patch
 Patch2:		gtk-chtheme-0.3.1-dont-strip-binary-too-early.patch
 Patch3:		gtk-chtheme-0.3.1-replace_deprecated_GtkFunction.patch
 Patch4:		gtk-chtheme-0.3.1-fix_linking.patch
-URL:		http://plasmasturm.org/programs/gtk-chtheme/
+URL:		https://plasmasturm.org/programs/gtk-chtheme/
 Group:		Graphical desktop/GNOME
 License:	GPLv2
 BuildRequires:	pkgconfig(gtk+-2.0)
