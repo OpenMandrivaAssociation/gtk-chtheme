@@ -11,6 +11,7 @@ Patch4:		gtk-chtheme-0.3.1-fix_linking.patch
 URL:		https://plasmasturm.org/programs/gtk-chtheme/
 Group:		Graphical desktop/GNOME
 License:	GPLv2
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	imagemagick
 
